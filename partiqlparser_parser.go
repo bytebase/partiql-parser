@@ -20555,7 +20555,7 @@ func (s *OrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 type ExprOrBaseContext struct {
 	ExprOrContext
-	parent IExprAndContext
+	parent_ IExprAndContext
 }
 
 func NewExprOrBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ExprOrBaseContext {
@@ -20568,9 +20568,9 @@ func NewExprOrBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *Exp
 	return p
 }
 
-func (s *ExprOrBaseContext) GetParent() IExprAndContext { return s.parent }
+func (s *ExprOrBaseContext) GetParent_() IExprAndContext { return s.parent_ }
 
-func (s *ExprOrBaseContext) SetParent(v IExprAndContext) { s.parent = v }
+func (s *ExprOrBaseContext) SetParent_(v IExprAndContext) { s.parent_ = v }
 
 func (s *ExprOrBaseContext) GetRuleContext() antlr.RuleContext {
 	return s
@@ -20639,7 +20639,7 @@ func (p *PartiQLParserParser) exprOr(_p int) (localctx IExprOrContext) {
 
 		var _x = p.exprAnd(0)
 
-		localctx.(*ExprOrBaseContext).parent = _x
+		localctx.(*ExprOrBaseContext).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -20765,7 +20765,7 @@ func (s *ExprAndContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 type ExprAndBaseContext struct {
 	ExprAndContext
-	parent IExprNotContext
+	parent_ IExprNotContext
 }
 
 func NewExprAndBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ExprAndBaseContext {
@@ -20778,9 +20778,9 @@ func NewExprAndBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *Ex
 	return p
 }
 
-func (s *ExprAndBaseContext) GetParent() IExprNotContext { return s.parent }
+func (s *ExprAndBaseContext) GetParent_() IExprNotContext { return s.parent_ }
 
-func (s *ExprAndBaseContext) SetParent(v IExprNotContext) { s.parent = v }
+func (s *ExprAndBaseContext) SetParent_(v IExprNotContext) { s.parent_ = v }
 
 func (s *ExprAndBaseContext) GetRuleContext() antlr.RuleContext {
 	return s
@@ -20940,7 +20940,7 @@ func (p *PartiQLParserParser) exprAnd(_p int) (localctx IExprAndContext) {
 
 		var _x = p.ExprNot()
 
-		localctx.(*ExprAndBaseContext).parent = _x
+		localctx.(*ExprAndBaseContext).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -21139,7 +21139,7 @@ func (s *NotContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 type ExprNotBaseContext struct {
 	ExprNotContext
-	parent IExprPredicateContext
+	parent_ IExprPredicateContext
 }
 
 func NewExprNotBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ExprNotBaseContext {
@@ -21152,9 +21152,9 @@ func NewExprNotBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *Ex
 	return p
 }
 
-func (s *ExprNotBaseContext) GetParent() IExprPredicateContext { return s.parent }
+func (s *ExprNotBaseContext) GetParent_() IExprPredicateContext { return s.parent_ }
 
-func (s *ExprNotBaseContext) SetParent(v IExprPredicateContext) { s.parent = v }
+func (s *ExprNotBaseContext) SetParent_(v IExprPredicateContext) { s.parent_ = v }
 
 func (s *ExprNotBaseContext) GetRuleContext() antlr.RuleContext {
 	return s
@@ -21238,7 +21238,7 @@ func (p *PartiQLParserParser) ExprNot() (localctx IExprNotContext) {
 
 			var _x = p.exprPredicate(0)
 
-			localctx.(*ExprNotBaseContext).parent = _x
+			localctx.(*ExprNotBaseContext).parent_ = _x
 		}
 
 	default:
@@ -21553,7 +21553,7 @@ func (s *PredicateBetweenContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 
 type PredicateBaseContext struct {
 	ExprPredicateContext
-	parent IMathOp00Context
+	parent_ IMathOp00Context
 }
 
 func NewPredicateBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *PredicateBaseContext {
@@ -21566,9 +21566,9 @@ func NewPredicateBaseContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *
 	return p
 }
 
-func (s *PredicateBaseContext) GetParent() IMathOp00Context { return s.parent }
+func (s *PredicateBaseContext) GetParent_() IMathOp00Context { return s.parent_ }
 
-func (s *PredicateBaseContext) SetParent(v IMathOp00Context) { s.parent = v }
+func (s *PredicateBaseContext) SetParent_(v IMathOp00Context) { s.parent_ = v }
 
 func (s *PredicateBaseContext) GetRuleContext() antlr.RuleContext {
 	return s
@@ -21950,7 +21950,7 @@ func (p *PartiQLParserParser) exprPredicate(_p int) (localctx IExprPredicateCont
 
 		var _x = p.mathOp00(0)
 
-		localctx.(*PredicateBaseContext).parent = _x
+		localctx.(*PredicateBaseContext).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -22331,8 +22331,8 @@ type IMathOp00Context interface {
 	// GetLhs returns the lhs rule contexts.
 	GetLhs() IMathOp00Context
 
-	// GetParent returns the parent rule contexts.
-	GetParent() IMathOp01Context
+	// GetParent_ returns the parent_ rule contexts.
+	GetParent_() IMathOp01Context
 
 	// GetRhs returns the rhs rule contexts.
 	GetRhs() IMathOp01Context
@@ -22340,8 +22340,8 @@ type IMathOp00Context interface {
 	// SetLhs sets the lhs rule contexts.
 	SetLhs(IMathOp00Context)
 
-	// SetParent sets the parent rule contexts.
-	SetParent(IMathOp01Context)
+	// SetParent_ sets the parent_ rule contexts.
+	SetParent_(IMathOp01Context)
 
 	// SetRhs sets the rhs rule contexts.
 	SetRhs(IMathOp01Context)
@@ -22357,11 +22357,11 @@ type IMathOp00Context interface {
 
 type MathOp00Context struct {
 	antlr.BaseParserRuleContext
-	parser antlr.Parser
-	lhs    IMathOp00Context
-	parent IMathOp01Context
-	op     antlr.Token
-	rhs    IMathOp01Context
+	parser  antlr.Parser
+	lhs     IMathOp00Context
+	parent_ IMathOp01Context
+	op      antlr.Token
+	rhs     IMathOp01Context
 }
 
 func NewEmptyMathOp00Context() *MathOp00Context {
@@ -22397,13 +22397,13 @@ func (s *MathOp00Context) SetOp(v antlr.Token) { s.op = v }
 
 func (s *MathOp00Context) GetLhs() IMathOp00Context { return s.lhs }
 
-func (s *MathOp00Context) GetParent() IMathOp01Context { return s.parent }
+func (s *MathOp00Context) GetParent_() IMathOp01Context { return s.parent_ }
 
 func (s *MathOp00Context) GetRhs() IMathOp01Context { return s.rhs }
 
 func (s *MathOp00Context) SetLhs(v IMathOp00Context) { s.lhs = v }
 
-func (s *MathOp00Context) SetParent(v IMathOp01Context) { s.parent = v }
+func (s *MathOp00Context) SetParent_(v IMathOp01Context) { s.parent_ = v }
 
 func (s *MathOp00Context) SetRhs(v IMathOp01Context) { s.rhs = v }
 
@@ -22494,7 +22494,7 @@ func (p *PartiQLParserParser) mathOp00(_p int) (localctx IMathOp00Context) {
 
 		var _x = p.mathOp01(0)
 
-		localctx.(*MathOp00Context).parent = _x
+		localctx.(*MathOp00Context).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -22582,8 +22582,8 @@ type IMathOp01Context interface {
 	// GetLhs returns the lhs rule contexts.
 	GetLhs() IMathOp01Context
 
-	// GetParent returns the parent rule contexts.
-	GetParent() IMathOp02Context
+	// GetParent_ returns the parent_ rule contexts.
+	GetParent_() IMathOp02Context
 
 	// GetRhs returns the rhs rule contexts.
 	GetRhs() IMathOp02Context
@@ -22591,8 +22591,8 @@ type IMathOp01Context interface {
 	// SetLhs sets the lhs rule contexts.
 	SetLhs(IMathOp01Context)
 
-	// SetParent sets the parent rule contexts.
-	SetParent(IMathOp02Context)
+	// SetParent_ sets the parent_ rule contexts.
+	SetParent_(IMathOp02Context)
 
 	// SetRhs sets the rhs rule contexts.
 	SetRhs(IMathOp02Context)
@@ -22609,11 +22609,11 @@ type IMathOp01Context interface {
 
 type MathOp01Context struct {
 	antlr.BaseParserRuleContext
-	parser antlr.Parser
-	lhs    IMathOp01Context
-	parent IMathOp02Context
-	op     antlr.Token
-	rhs    IMathOp02Context
+	parser  antlr.Parser
+	lhs     IMathOp01Context
+	parent_ IMathOp02Context
+	op      antlr.Token
+	rhs     IMathOp02Context
 }
 
 func NewEmptyMathOp01Context() *MathOp01Context {
@@ -22649,13 +22649,13 @@ func (s *MathOp01Context) SetOp(v antlr.Token) { s.op = v }
 
 func (s *MathOp01Context) GetLhs() IMathOp01Context { return s.lhs }
 
-func (s *MathOp01Context) GetParent() IMathOp02Context { return s.parent }
+func (s *MathOp01Context) GetParent_() IMathOp02Context { return s.parent_ }
 
 func (s *MathOp01Context) GetRhs() IMathOp02Context { return s.rhs }
 
 func (s *MathOp01Context) SetLhs(v IMathOp01Context) { s.lhs = v }
 
-func (s *MathOp01Context) SetParent(v IMathOp02Context) { s.parent = v }
+func (s *MathOp01Context) SetParent_(v IMathOp02Context) { s.parent_ = v }
 
 func (s *MathOp01Context) SetRhs(v IMathOp02Context) { s.rhs = v }
 
@@ -22752,7 +22752,7 @@ func (p *PartiQLParserParser) mathOp01(_p int) (localctx IMathOp01Context) {
 
 		var _x = p.mathOp02(0)
 
-		localctx.(*MathOp01Context).parent = _x
+		localctx.(*MathOp01Context).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -22847,8 +22847,8 @@ type IMathOp02Context interface {
 	// GetLhs returns the lhs rule contexts.
 	GetLhs() IMathOp02Context
 
-	// GetParent returns the parent rule contexts.
-	GetParent() IValueExprContext
+	// GetParent_ returns the parent_ rule contexts.
+	GetParent_() IValueExprContext
 
 	// GetRhs returns the rhs rule contexts.
 	GetRhs() IValueExprContext
@@ -22856,8 +22856,8 @@ type IMathOp02Context interface {
 	// SetLhs sets the lhs rule contexts.
 	SetLhs(IMathOp02Context)
 
-	// SetParent sets the parent rule contexts.
-	SetParent(IValueExprContext)
+	// SetParent_ sets the parent_ rule contexts.
+	SetParent_(IValueExprContext)
 
 	// SetRhs sets the rhs rule contexts.
 	SetRhs(IValueExprContext)
@@ -22875,11 +22875,11 @@ type IMathOp02Context interface {
 
 type MathOp02Context struct {
 	antlr.BaseParserRuleContext
-	parser antlr.Parser
-	lhs    IMathOp02Context
-	parent IValueExprContext
-	op     antlr.Token
-	rhs    IValueExprContext
+	parser  antlr.Parser
+	lhs     IMathOp02Context
+	parent_ IValueExprContext
+	op      antlr.Token
+	rhs     IValueExprContext
 }
 
 func NewEmptyMathOp02Context() *MathOp02Context {
@@ -22915,13 +22915,13 @@ func (s *MathOp02Context) SetOp(v antlr.Token) { s.op = v }
 
 func (s *MathOp02Context) GetLhs() IMathOp02Context { return s.lhs }
 
-func (s *MathOp02Context) GetParent() IValueExprContext { return s.parent }
+func (s *MathOp02Context) GetParent_() IValueExprContext { return s.parent_ }
 
 func (s *MathOp02Context) GetRhs() IValueExprContext { return s.rhs }
 
 func (s *MathOp02Context) SetLhs(v IMathOp02Context) { s.lhs = v }
 
-func (s *MathOp02Context) SetParent(v IValueExprContext) { s.parent = v }
+func (s *MathOp02Context) SetParent_(v IValueExprContext) { s.parent_ = v }
 
 func (s *MathOp02Context) SetRhs(v IValueExprContext) { s.rhs = v }
 
@@ -23022,7 +23022,7 @@ func (p *PartiQLParserParser) mathOp02(_p int) (localctx IMathOp02Context) {
 
 		var _x = p.ValueExpr()
 
-		localctx.(*MathOp02Context).parent = _x
+		localctx.(*MathOp02Context).parent_ = _x
 	}
 
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
@@ -23117,14 +23117,14 @@ type IValueExprContext interface {
 	// GetRhs returns the rhs rule contexts.
 	GetRhs() IValueExprContext
 
-	// GetParent returns the parent rule contexts.
-	GetParent() IExprPrimaryContext
+	// GetParent_ returns the parent_ rule contexts.
+	GetParent_() IExprPrimaryContext
 
 	// SetRhs sets the rhs rule contexts.
 	SetRhs(IValueExprContext)
 
-	// SetParent sets the parent rule contexts.
-	SetParent(IExprPrimaryContext)
+	// SetParent_ sets the parent_ rule contexts.
+	SetParent_(IExprPrimaryContext)
 
 	// Getter signatures
 	ValueExpr() IValueExprContext
@@ -23138,10 +23138,10 @@ type IValueExprContext interface {
 
 type ValueExprContext struct {
 	antlr.BaseParserRuleContext
-	parser antlr.Parser
-	sign   antlr.Token
-	rhs    IValueExprContext
-	parent IExprPrimaryContext
+	parser  antlr.Parser
+	sign    antlr.Token
+	rhs     IValueExprContext
+	parent_ IExprPrimaryContext
 }
 
 func NewEmptyValueExprContext() *ValueExprContext {
@@ -23177,11 +23177,11 @@ func (s *ValueExprContext) SetSign(v antlr.Token) { s.sign = v }
 
 func (s *ValueExprContext) GetRhs() IValueExprContext { return s.rhs }
 
-func (s *ValueExprContext) GetParent() IExprPrimaryContext { return s.parent }
+func (s *ValueExprContext) GetParent_() IExprPrimaryContext { return s.parent_ }
 
 func (s *ValueExprContext) SetRhs(v IValueExprContext) { s.rhs = v }
 
-func (s *ValueExprContext) SetParent(v IExprPrimaryContext) { s.parent = v }
+func (s *ValueExprContext) SetParent_(v IExprPrimaryContext) { s.parent_ = v }
 
 func (s *ValueExprContext) ValueExpr() IValueExprContext {
 	var t antlr.RuleContext
@@ -23300,7 +23300,7 @@ func (p *PartiQLParserParser) ValueExpr() (localctx IValueExprContext) {
 
 			var _x = p.exprPrimary(0)
 
-			localctx.(*ValueExprContext).parent = _x
+			localctx.(*ValueExprContext).parent_ = _x
 		}
 
 	default:

@@ -465,17 +465,17 @@ exprSelect
 
 exprOr
     : lhs=exprOr OR rhs=exprAnd     # Or
-    | parent=exprAnd                # ExprOrBase
+    | parent_=exprAnd                # ExprOrBase
     ;
 
 exprAnd
     : lhs=exprAnd op=AND rhs=exprNot  # And
-    | parent=exprNot                  # ExprAndBase
+    | parent_=exprNot                  # ExprAndBase
     ;
 
 exprNot
     : <assoc=right> op=NOT rhs=exprNot  # Not
-    | parent=exprPredicate              # ExprNotBase
+    | parent_=exprPredicate              # ExprNotBase
     ;
 
 exprPredicate
@@ -485,27 +485,27 @@ exprPredicate
     | lhs=exprPredicate NOT? IN rhs=mathOp00                                         # PredicateIn
     | lhs=exprPredicate NOT? LIKE rhs=mathOp00 ( ESCAPE escape=expr )?               # PredicateLike
     | lhs=exprPredicate NOT? BETWEEN lower=mathOp00 AND upper=mathOp00               # PredicateBetween
-    | parent=mathOp00                                                                # PredicateBase
+    | parent_=mathOp00                                                                # PredicateBase
     ;
 
 mathOp00
     : lhs=mathOp00 op=CONCAT rhs=mathOp01
-    | parent=mathOp01
+    | parent_=mathOp01
     ;
 
 mathOp01
     : lhs=mathOp01 op=(PLUS|MINUS) rhs=mathOp02
-    | parent=mathOp02
+    | parent_=mathOp02
     ;
 
 mathOp02
     : lhs=mathOp02 op=(PERCENT|ASTERISK|SLASH_FORWARD) rhs=valueExpr
-    | parent=valueExpr
+    | parent_=valueExpr
     ;
 
 valueExpr
     : sign=(PLUS|MINUS) rhs=valueExpr
-    | parent=exprPrimary
+    | parent_=exprPrimary
     ;
 
 exprPrimary
