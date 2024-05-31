@@ -12,7 +12,7 @@ options {
  */
 
 script:
-    root (COLON_SEMI root)* COLON_SEMI EOF;
+    root (COLON_SEMI root)* COLON_SEMI? EOF;
 
 root
     : (EXPLAIN (PAREN_LEFT explainOption (COMMA explainOption)* PAREN_RIGHT)? )? statement;
