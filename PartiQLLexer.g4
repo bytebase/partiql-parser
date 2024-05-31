@@ -361,7 +361,7 @@ IDENTIFIER_QUOTED
  */
 
 WS
-    : WHITESPACE+ -> channel(HIDDEN);
+    : WHITESPACE -> channel(HIDDEN);
 
 COMMENT_SINGLE
     : '--' ~[\r\n]* '\r'? '\n'? -> channel(HIDDEN);
