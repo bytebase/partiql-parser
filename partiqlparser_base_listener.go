@@ -1,4 +1,4 @@
-// Code generated from PartiQLParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from PartiQLParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // PartiQLParser
 import "github.com/antlr4-go/antlr/v4"
@@ -19,6 +19,12 @@ func (s *BasePartiQLParserListener) EnterEveryRule(ctx antlr.ParserRuleContext) 
 
 // ExitEveryRule is called when any rule is exited.
 func (s *BasePartiQLParserListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
+
+// EnterScript is called when production script is entered.
+func (s *BasePartiQLParserListener) EnterScript(ctx *ScriptContext) {}
+
+// ExitScript is called when production script is exited.
+func (s *BasePartiQLParserListener) ExitScript(ctx *ScriptContext) {}
 
 // EnterRoot is called when production root is entered.
 func (s *BasePartiQLParserListener) EnterRoot(ctx *RootContext) {}

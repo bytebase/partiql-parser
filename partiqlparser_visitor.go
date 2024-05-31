@@ -1,4 +1,4 @@
-// Code generated from PartiQLParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from PartiQLParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // PartiQLParser
 import "github.com/antlr4-go/antlr/v4"
@@ -6,6 +6,9 @@ import "github.com/antlr4-go/antlr/v4"
 // A complete Visitor for a parse tree produced by PartiQLParserParser.
 type PartiQLParserVisitor interface {
 	antlr.ParseTreeVisitor
+
+	// Visit a parse tree produced by PartiQLParserParser#script.
+	VisitScript(ctx *ScriptContext) interface{}
 
 	// Visit a parse tree produced by PartiQLParserParser#root.
 	VisitRoot(ctx *RootContext) interface{}

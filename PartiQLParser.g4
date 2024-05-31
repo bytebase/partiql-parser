@@ -11,14 +11,17 @@ options {
  *
  */
 
+script:
+    root (COLON_SEMI root)* COLON_SEMI EOF;
+
 root
     : (EXPLAIN (PAREN_LEFT explainOption (COMMA explainOption)* PAREN_RIGHT)? )? statement;
 
 statement
-    : dql COLON_SEMI? EOF          # QueryDql
-    | dml COLON_SEMI? EOF          # QueryDml
-    | ddl COLON_SEMI? EOF          # QueryDdl
-    | execCommand COLON_SEMI? EOF  # QueryExec
+    : dql          # QueryDql
+    | dml          # QueryDml
+    | ddl          # QueryDdl
+    | execCommand  # QueryExec
     ;
 
 /**

@@ -1,4 +1,4 @@
-// Code generated from PartiQLParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from PartiQLParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // PartiQLParser
 import "github.com/antlr4-go/antlr/v4"
@@ -6,6 +6,9 @@ import "github.com/antlr4-go/antlr/v4"
 // PartiQLParserListener is a complete listener for a parse tree produced by PartiQLParserParser.
 type PartiQLParserListener interface {
 	antlr.ParseTreeListener
+
+	// EnterScript is called when entering the script production.
+	EnterScript(c *ScriptContext)
 
 	// EnterRoot is called when entering the root production.
 	EnterRoot(c *RootContext)
@@ -552,6 +555,9 @@ type PartiQLParserListener interface {
 
 	// EnterTypeCustom is called when entering the TypeCustom production.
 	EnterTypeCustom(c *TypeCustomContext)
+
+	// ExitScript is called when exiting the script production.
+	ExitScript(c *ScriptContext)
 
 	// ExitRoot is called when exiting the root production.
 	ExitRoot(c *RootContext)
